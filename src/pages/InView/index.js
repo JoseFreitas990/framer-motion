@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./styles.scss";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 const InView = () => {
+  const firstSectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll();
+
   const header = {
     hidden: {
       opacity: 0,
-      letterSpacing: 10,
     },
     show: {
       opacity: 1,
-      letterSpacing: 0,
 
       transition: { duration: 1 },
     },
@@ -46,6 +48,7 @@ const InView = () => {
         >
           Go up
         </motion.h2>
+        <motion.div></motion.div>
       </div>
       <div className='second-section'>
         <motion.h2

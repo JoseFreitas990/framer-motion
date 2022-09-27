@@ -1,3 +1,3 @@
 import InView from "./InView";
-
-export { InView };
+import Parallax from "./Parallax";
+export { InView, Parallax };
